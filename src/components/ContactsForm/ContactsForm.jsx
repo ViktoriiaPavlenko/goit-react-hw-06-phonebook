@@ -1,25 +1,16 @@
 import { useState } from 'react';
-import styles from './ContactsForm.module.css';
-// import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import todosActions from '../../redux/contacts/contacts-actions';
+import actions from '../../redux/contacts/contacts-actions';
+import styles from './ContactsForm.module.css';
 
 export default function ContactsForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-  // const contacts = useSelector(state => state.contacts.items);
-
-  // const handleChange = e => {
-  //   const { name, value } = e.currentTarget;
-  //   if (name === 'name') setName(value);
-  //   else if (name === 'number') setNumber(value);
-  // };
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(todosActions.addContact({ name, number }));
-    // dispatch(todosActions.changeFilter(''));
+    dispatch(actions.addContact({ name, number }));
     reset();
   };
 
@@ -36,12 +27,6 @@ export default function ContactsForm() {
         return;
     }
   };
-
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   onSubmit(name, number);
-  //   reset();
-  // };
 
   const reset = () => {
     setName('');
@@ -83,7 +68,3 @@ export default function ContactsForm() {
     </form>
   );
 }
-
-// ContactsForm.propTypes = {
-//   onSubmit: PropTypes.func,
-// };
