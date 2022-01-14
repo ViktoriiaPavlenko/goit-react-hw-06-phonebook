@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilteredContacts } from '../../redux/contacts/contacts-selectors';
 import actions from '../../redux/contacts/contacts-actions';
+import { IoTrashBinOutline } from 'react-icons/io5';
 import styles from './ContactsList.module.css';
 
 export default function ContactList() {
@@ -22,7 +23,7 @@ export default function ContactList() {
             type="button"
             onClick={() => handleDelete(contact.id)}
           >
-            Delete
+            <IoTrashBinOutline /> Delete
           </button>
         </li>
       ))}

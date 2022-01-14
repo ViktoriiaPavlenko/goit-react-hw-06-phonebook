@@ -1,5 +1,5 @@
 .list {
-  width: 309px;
+  width: 374px;
   text-align: right;
   margin: 0 auto;
 }
@@ -10,6 +10,10 @@
   font-weight: 500;
 }
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85px;
   color: beige;
   padding: 5px;
   margin-bottom: 10px;
